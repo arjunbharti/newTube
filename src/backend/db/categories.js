@@ -1,27 +1,28 @@
 import { v4 as uuid } from "uuid";
 
-/**
- * Category Database can be added here.
- * You can add category of your wish with different attributes
- * */
-
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Computer Programming",
+    categoryName: "vlogs",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Vlog stands for a video blog or video log, and refers to a type of blog where most or all of the content is in a video format.",
   },
   {
     _id: uuid(),
-    categoryName: "Frontend Development",
+    categoryName: "comedy",
     description:
-      "Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application",
+      "Comedy is a genre in which the goal is to make audiences laugh. Comedy is also a type of dramatic work which employs amusing and satirical tones with a cheerful ending.",
   },
   {
     _id: uuid(),
-    categoryName: "Backend Development",
+    categoryName: "lo-fi",
     description:
-      "Backend Development is also known as server-side development. It is everything that the users don't see and contains behind-the-scenes activities that occur when performing any action on a website.",
+      "The production or reproduction of audio characterized by an unpolished or rough sound quality.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "philosophy",
+    description:
+      "The study of the basic ideas about knowledge, right and wrong, reasoning, and the value of things."
   },
 ];
