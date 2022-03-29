@@ -50,3 +50,11 @@
       transform: translateY(0%);
     }
   }
+
+@media screen and (max-width: 450px) {
+  .intro-text {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 4rem;
+  }
+}

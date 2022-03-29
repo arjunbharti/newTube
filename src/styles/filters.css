@@ -1,0 +1,19 @@
+.filters-container {
+    padding: 2rem 3rem 0.5rem 3rem;
+}
+
+.filters-list {
+    justify-content: space-around;
+}
+
+.filters-list-item {
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.filters-list-item:hover {
+    transform: scale(1.2);
+}

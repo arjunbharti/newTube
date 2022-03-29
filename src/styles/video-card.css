@@ -1,0 +1,33 @@
+.btn-card {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-img {
+    cursor: pointer;
+}
+
+.btn-card:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-card-secondary {
+    background-color: var(--background);
+}
+
+.btn-card-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.card-text-overlay {
+    transition: transform .3s;
+}
+
+.card-text-overlay:hover {
+    transform: scale(1.1);
+}
+
+.like-badge {
+    cursor: pointer;
+}

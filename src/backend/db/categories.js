@@ -6,23 +6,27 @@ export const categories = [
     categoryName: "vlogs",
     description:
       "Vlog stands for a video blog or video log, and refers to a type of blog where most or all of the content is in a video format.",
+    image: "/assets/how-to-vlog.jpg",
   },
   {
     _id: uuid(),
     categoryName: "comedy",
     description:
       "Comedy is a genre in which the goal is to make audiences laugh. Comedy is also a type of dramatic work which employs amusing and satirical tones with a cheerful ending.",
+    image: "/assets/comedy.png"
   },
   {
     _id: uuid(),
     categoryName: "lo-fi",
     description:
       "The production or reproduction of audio characterized by an unpolished or rough sound quality.",
+    image: "/assets/lofi.jpg"
   },
   {
     _id: uuid(),
     categoryName: "philosophy",
     description:
-      "The study of the basic ideas about knowledge, right and wrong, reasoning, and the value of things."
+      "The study of the basic ideas about knowledge, right and wrong, reasoning, and the value of things.",
+    image: "/assets/philosophy.jpg"
   },
 ];

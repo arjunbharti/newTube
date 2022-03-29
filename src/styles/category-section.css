@@ -1,0 +1,30 @@
+.category-section-text {
+    padding-top: 2rem;
+    font-weight: 600;
+}
+
+.category-container {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.category-card-img {
+    height: 300px;
+    width: 400px;
+}
+
+@media screen and (max-width: 450px){
+    .category-container {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0.5rem;
+    }
+
+    .category-card {
+        max-width: 300px;
+    }
+
+    .category-card-img {
+        max-width: inherit;
+    }
+}

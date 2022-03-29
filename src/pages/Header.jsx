@@ -13,9 +13,11 @@ const Header = () => {
             <input className="nav-search" type="search" placeholder="Search trending videos here..." />
             <nav>
                 <div className="nav-action-items">
-                    <Link className="nav-saved-action" to="/saved"><i class="fa-regular fa-bookmark fa-lg"><span className="badge-icon">0</span></i></Link>
-                    <Link className="nav-playlist-action" to="/playlist"><i class="far fa-play-circle fa-lg"><span className="badge-icon">0</span></i></Link>
-                    <Link className="nav-history-action" to="/history"><i class="fa-solid fa-clock-rotate-left fa-lg"><span className="badge-icon">0</span></i></Link>
+                    <Link className="nav-liked-action" to="/liked"><i className="fa-regular fa-heart fa-lg"><span className="badge-icon">0</span></i></Link>
+                    <Link className="nav-saved-action" to="/saved"><i className="fa-regular fa-bookmark fa-lg"><span className="badge-icon">0</span></i></Link>
+                    <Link className="nav-playlist-action" to="/playlist"><i className="far fa-play-circle fa-lg"><span className="badge-icon">0</span></i></Link>
+                    <Link className="nav-history-action" to="/history"><i className="fa-solid fa-clock-rotate-left fa-lg"><span className="badge-icon">0</span></i></Link>
+                    <Link className="nav-user-action" to="/login"><i className="far fa-user fa-lg"></i></Link>
                 </div>
             </nav>
             <div className="burger">

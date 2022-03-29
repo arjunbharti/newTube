@@ -45,7 +45,7 @@ nav{
 .nav-action-items{
     display: flex;
     align-items: center;
-    width: 14rem;
+    width: 16rem;
     justify-content: space-around;
 }
 
@@ -62,7 +62,7 @@ nav{
     background-color: var(--primary-hover);
 }
 
-.nav-saved-action, .nav-playlist-action, .nav-history-action{
+.nav-saved-action, .nav-playlist-action, .nav-history-action, .nav-liked-action{
     position: relative;
 }
 
