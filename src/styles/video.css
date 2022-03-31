@@ -1,0 +1,22 @@
+.video-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.video {
+    padding: 2rem;
+   justify-content: center;
+   align-items: center;
+}
+
+.responsive-iframe {
+    width: 800px;
+    height: 400px;
+}
+
+.card-body-video {
+    width: 800px;
+}
+
+
+

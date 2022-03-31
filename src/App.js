@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import LikedVideos from "./pages/LikedVideos";
 import WatchLater from './pages/WatchLater';
 import Playlist from "./pages/Playlist";
+import WatchHistory from "./pages/WatchHistory";
+import Video from "./pages/Video";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/liked" element={<LikedVideos />} />
         <Route path="/saved" element={<WatchLater />} />
         <Route path="/playlist" element={<Playlist />} />
+        <Route path="/history" element={<WatchHistory />} />
+        <Route path="/video" element={<Video />} />
       </Routes>
     </BrowserRouter>
   );
