@@ -1,0 +1,35 @@
+.modal {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid;
+    width: 30%;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-action {
+    justify-content: space-between;
+}
+
+.modal-action-btn {
+    background-color: var(--primary-color);
+    border: solid white;
+}
+
+.existing-playlist {
+    margin-top: 1rem;
+    overflow-y: scroll;
+    max-height: 10rem;
+    text-align: center;
+}
+
+.playlist-item {
+    padding-bottom: 1.5rem;
+}
+
+.playlist-item-name {
+    padding-top: 1rem;
+}

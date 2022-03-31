@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { videos } from '../backend/db/videos'
 import '../styles/video-card.css';
+import AddToPlaylist from './AddToPlaylist';
 
 const VideoCard = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
     {videos.map((video) => {
         return (
+            <>
             <div className="card card-text-overlay">
                 <div className="card-img-container">
                     <img src={video.thumbnail} alt="img/thumbnail" className="card-img" />
@@ -31,11 +34,17 @@ const VideoCard = () => {
                             <button className="btn-card">Watch later</button>
                         </div>
                         <div className="card-button">
-                            <button className="btn-card btn-card-secondary">Add to playlist</button>
+                            <button 
+                                className="btn-card btn-card-secondary"
+                                onClick={() => setOpenModal(true)}
+                            >Add to playlist</button>
                         </div>
                     </div>
                 </div>
-        </div> 
+            </div>
+            {openModal && <AddToPlaylist closeModal={setOpenModal}/>}
+
+            </>
         )
     })}
         

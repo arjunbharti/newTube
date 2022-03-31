@@ -1,0 +1,7 @@
+.playlist-container {
+    padding: 2rem;
+}
+
+.playlist-action {
+    justify-content: space-between;
+}
