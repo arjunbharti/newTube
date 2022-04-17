@@ -1,3 +1,4 @@
+import React from 'react'
 import '../styles/login-and-signup.css'
 import Header from './Header'
 import { Link } from 'react-router-dom'
