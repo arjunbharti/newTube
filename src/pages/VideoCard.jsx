@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import '../styles/video-card.css';
 import AddToPlaylist from './AddToPlaylist';
 import { useWatchLater } from '../context/watchLater-context';
+import { useLikedVideo } from '../context/likedVideos-context';
 
 const VideoCard = ({video}) => {
   const [openModal, setOpenModal] = useState(false);
   const { watchLaterState, watchLaterDispatch } = useWatchLater();
+  const { likedState, likedDispatch } = useLikedVideo();
   return (
         <>
             <div className="card card-text-overlay">
@@ -22,9 +24,25 @@ const VideoCard = ({video}) => {
                         </div>
                     </div>
                     <div className="card-action-items">
-                        <div class="like-badge">
-                            <i className='fa-regular fa-heart'></i>
-                        </div>
+                        {likedState.liked.find((item) => item.id === video.id) ? (
+                            <div class="like-badge"
+                                onClick={() => likedDispatch({
+                                    type: "remove-from-liked",
+                                    payload: video
+                                })}
+                            >
+                                <i className='fa-solid fa-heart'></i>
+                            </div>
+                        ) : (
+                            <div class="like-badge"
+                                onClick={() => likedDispatch({
+                                    type: "add-to-liked",
+                                    payload: video
+                                })}
+                            >
+                                <i className='fa-regular fa-heart'></i>
+                            </div>
+                        )}
                         <div className='card-duration'>{video.duration}</div>
                     </div>
                     <div className="card-action-items">
