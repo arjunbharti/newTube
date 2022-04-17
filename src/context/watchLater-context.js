@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import { watchLaterReducer } from '../reducers/watchLater-reducer';
 
 const WatchLaterContext = createContext(null);
