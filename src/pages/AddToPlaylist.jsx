@@ -10,11 +10,11 @@ const AddToPlaylist = ({closeModal}) => {
             <div className='modal-action flex-row'>
               <input 
                       type="email" 
-                      class="input"
+                      className="input"
                       placeholder="Enter playlist name"
               />  
               <button class="btn btn-icon">                   
-                <i class="fa fa-bookmark"></i>
+                <i className="fa fa-bookmark"></i>
               </button>
             </div>
             <div className="existing-playlist">
