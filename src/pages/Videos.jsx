@@ -4,6 +4,7 @@ import VideoCard from './VideoCard'
 import '../styles/videos.css'
 import Filters from './Filters'
 import axios from 'axios'
+
 const Videos = () => {
   useEffect(() => {
     getVideos();

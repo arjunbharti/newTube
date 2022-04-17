@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import Header from './Header'
 import '../styles/video.css'
+import { useAuth } from '../context/auth-context'
 
 const Video = () => {
     useEffect(() => {
         document.title = "new video | newTube"
     }, [])
+
   return (
     <>
         <Header />
