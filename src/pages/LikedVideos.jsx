@@ -1,71 +1,31 @@
 import React, { useEffect } from 'react'
 import Header from './Header'
 import '../styles/liked-videos.css'
+import { useLikedVideo } from '../context/likedVideos-context';
+import VideoCard from './VideoCard';
 
 const LikedVideos = () => {
     useEffect(() => {
         document.title = "Liked | newTube"
     }, []);
+    const { likedState } = useLikedVideo()
   return (
     <>
         <Header />
         <p className='text-center text-m page-heading'>Liked Videos</p>
-        <section className='videos-container'>
-        <div className="card card-text-overlay">
-                <div className="card-img-container">
-                    <img src="{video.thumbnail}" alt="img/thumbnail" className="card-img" />
-                </div>
-                <div className="card-body">
-                    <div className="card-title">
-                        <div className="card-body-title">
-                        </div>
-                        <div className="card-body-subtitle">
-                        </div>
-                    </div>
-                    <div className="card-action-items">
-                        <div class="like-badge">
-                            <i className='fa-regular fa-heart'></i>
-                        </div>
-                        <div className='card-duration'></div>
-                    </div>
-                    <div className="card-action-items">
-                        <div className="card-button">
-                            <button className="btn-card">Watch later</button>
-                        </div>
-                        <div className="card-button">
-                            <button className="btn-card btn-card-secondary">Add to playlist</button>
-                        </div>
-                    </div>
-                </div>
-        </div> 
-        <div className="card card-text-overlay">
-                <div className="card-img-container">
-                    <img src="{video.thumbnail}" alt="img/thumbnail" className="card-img" />
-                </div>
-                <div className="card-body">
-                    <div className="card-title">
-                        <div className="card-body-title">
-                        </div>
-                        <div className="card-body-subtitle">
-                        </div>
-                    </div>
-                    <div className="card-action-items">
-                        <div class="like-badge">
-                            <i className='fa-regular fa-heart'></i>
-                        </div>
-                        <div className='card-duration'></div>
-                    </div>
-                    <div className="card-action-items">
-                        <div className="card-button">
-                            <button className="btn-card">Watch later</button>
-                        </div>
-                        <div className="card-button">
-                            <button className="btn-card btn-card-secondary">Add to playlist</button>
-                        </div>
-                    </div>
-                </div>
-        </div> 
-        </section>
+            {likedState.liked.length === 0 ? ( 
+                <p>no videos yet</p>
+            ) : (
+                <section className='videos-container'>
+                    {likedState.liked.map((video) => {
+                        return (
+                            <>
+                                <VideoCard key={video.id} video={video} />
+                            </>
+                        )
+                    })}
+                </section>
+            )}
     </>
   )
 }
