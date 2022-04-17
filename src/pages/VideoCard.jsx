@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { videos } from '../backend/db/videos'
 import '../styles/video-card.css';
 import AddToPlaylist from './AddToPlaylist';
+import { useWatchLater } from '../context/watchLater-context';
 
-const VideoCard = () => {
+const VideoCard = ({video}) => {
   const [openModal, setOpenModal] = useState(false);
+  const { watchLaterState, watchLaterDispatch } = useWatchLater();
   return (
-    <>
-    {videos.map((video) => {
-        return (
-            <>
+        <>
             <div className="card card-text-overlay">
                 <div className="card-img-container">
                     <img src={video.thumbnail} alt="img/thumbnail" className="card-img" />
@@ -30,9 +28,31 @@ const VideoCard = () => {
                         <div className='card-duration'>{video.duration}</div>
                     </div>
                     <div className="card-action-items">
-                        <div className="card-button">
-                            <button className="btn-card">Watch later</button>
-                        </div>
+                        {watchLaterState.watchLater.find((item) => item.id === video.id) ? (
+                            <div className="card-button">
+                                <button 
+                                    className="btn-card"
+                                    onClick={() => watchLaterDispatch({
+                                        type: "remove-from-watchLater",
+                                        payload: video
+                                    })}
+                                >
+                                Remove from list
+                                </button>
+                            </div>
+                        ) : (
+                            <div className="card-button">
+                                <button 
+                                    className="btn-card"
+                                    onClick={() => watchLaterDispatch({
+                                        type: "add-to-watchLater",
+                                        payload: video
+                                    })}
+                                >
+                                Watch later
+                                </button>
+                            </div>
+                        )}
                         <div className="card-button">
                             <button 
                                 className="btn-card btn-card-secondary"
@@ -44,11 +64,7 @@ const VideoCard = () => {
             </div>
             {openModal && <AddToPlaylist closeModal={setOpenModal}/>}
 
-            </>
-        )
-    })}
-        
-    </>
+</>        
   )
 }
 

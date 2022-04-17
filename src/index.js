@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { AuthProvider } from "./context/auth-context";
+import { WatchLaterProvider } from "./context/watchLater-context";
 
 // Call make Server
 makeServer();
@@ -11,7 +12,9 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <WatchLaterProvider>
+        <App />
+      </WatchLaterProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")

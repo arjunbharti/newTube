@@ -8,29 +8,36 @@ import axios from 'axios'
 const Videos = () => {
   useEffect(() => {
     getVideos();
-}, [])
+  }, []);
 
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const data = [...videos];
 
   const getVideos = async () => {
     try {
+      setLoading(false);
       const res = await axios.get('/api/videos');
       setVideos(res.data.videos);
-    } catch (error) {
-        alert(error.message);
+      setLoading(false);
+    } catch(error){
+      alert(error.message);
     }
-}
+  }
+
   return (
     <>
       <Header />
       <Filters />
-      <section className='videos-container'>
-        {videos.map((video) => {
-          return(
-            <>
-              <VideoCard video={video} key={video.id} />
-            </>
-        )})}
+      <section>
+        {loading ? (<p>loading...</p>) : (
+          <div className='videos-container'>
+            {data.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   )
