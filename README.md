@@ -26,6 +26,11 @@ Open your favorite code editor and run locally!
 - Watch later videos
 - Authentication (Guest login)
 
+
+<img width="1440" alt="Screenshot 2022-04-18 at 1 12 28 AM" src="https://user-images.githubusercontent.com/60930192/163729903-33f9f2f2-cc57-4619-aa27-c9fd54861733.png">
+
+
+
 ## Tech Stack
 - React.js
 - uiVibe (my own css component library)
